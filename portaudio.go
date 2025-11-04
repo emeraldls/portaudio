@@ -15,13 +15,14 @@ package portaudio
 
 #cgo darwin,arm64 CFLAGS: -I${SRCDIR}/portaudio/include
 #cgo darwin,arm64 LDFLAGS: ${SRCDIR}/portaudio/lib/darwin_arm64/libportaudio.a -framework CoreAudio -framework AudioToolbox -framework AudioUnit -framework CoreServices -framework Carbon
+#include "portaudio.h"
 
 #cgo darwin,amd64 CFLAGS: -I${SRCDIR}/portaudio/include
 #cgo darwin,amd64 LDFLAGS: ${SRCDIR}/portaudio/lib/darwin_amd64/libportaudio.a -framework CoreAudio -framework AudioToolbox -framework AudioUnit -framework CoreServices -framework Carbon
 #include "portaudio.h"
 
 #cgo windows,amd64 CFLAGS: -I${SRCDIR}/portaudio/include
-#cgo windows,amd64 LDFLAGS: -L${SRCDIR}/portaudio/lib/windows/libportaudio.a -lportaudio -lwinmm -lole32 -luuid -lsetupapi
+#cgo windows,amd64 LDFLAGS: -L${SRCDIR}/portaudio/lib/windows -lportaudio -lwinmm -lole32 -luuid -lsetupapi
 #include "portaudio.h"
 
 #include "portaudio.h"
